@@ -1,1 +1,2 @@
 # ToDoList
+Using a code editor open up the folder for the application, open up a terminal and use the command cd todo_list to move in to the todo list directory. Then use the command php artisan serve to create a remove server, using a web browser go to localhost:8000 and you should see the application.

@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.button{
+    border-color: grey;
+    border-radius: 25px;
+    padding: 10px;
+    
+}
+
+.combutton{
+    background-color: lightgreen;
+    margin-right: 10px;
+}
+
+.delbutton{
+    background-color: red;
+}
+ .savebutton{
+    margin-top: 2px;
+ }
+
+
+ .table{
+    margin-left: auto;
+    margin-right: auto;
+    border-color: black;
+    border-style: solid;
+    text-align: center;
+    background-color: white;
+ }
+
+ .header{
+    text-align: center;
+ }
+
+ .newItemCentre{
+    text-align: center;
+    margin-left: 50%;
+}
+
+ .container1{
+    background-color:mistyrose;
+    width: 75%;
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+    padding-bottom: 100%;
+    border-radius: 25px;
+    
+ }
+
+ .tableRow{
+    border-radius: 25px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 10px;
+ }
