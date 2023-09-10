@@ -39,5 +39,21 @@ class TodoController extends Controller
         return redirect('/');
     }
 
+    public function editItem(Todo $listItem){
+
+        return view('edit',['listItem' => $listItem]);
+    }
+
+    // public function update(Request $request){
+
+    //     $data = array(
+    //         $name = $request->input('name');
+    //     );
+
+    //     Todo::table('todos')->where('id', $id)->update($data );
+    //     Session::flash('message', 'Data update successfully');
+
+    //     return redirect('/');
+    // }
   
 }

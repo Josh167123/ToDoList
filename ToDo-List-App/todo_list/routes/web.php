@@ -22,3 +22,6 @@ Route::post('/markCompleteRoute/{id}', [TodoController::class, 'markComplete'])-
 
 Route::delete('/deletedRoute/{id}', [TodoController::class, 'removeItem'])->name('removeItem');
 
+Route::get('/editRoute/{listItem}/edit', [TodoController::class, 'editItem'])->name('editItem');
+
+Route::put('/editRoute/{listItem}/update', [TodoController::class, 'update'])->name('update');
