@@ -15,7 +15,13 @@ class TodoController extends Controller
     public function markComplete($id) {
 
         $listItem = Todo::find($id);
-        $listItem->completed = 1;
+        if($listItem->completed == 0){
+         $listItem->completed = 1;    
+        }
+        else {
+         $listItem->completed = 0;    
+        }
+       
         $listItem->save();
 
         return redirect('/');
@@ -44,16 +50,12 @@ class TodoController extends Controller
         return view('edit',['listItem' => $listItem]);
     }
 
-    // public function update(Request $request){
+    public function update(Request $request, $id){
 
-    //     $data = array(
-    //         $name = $request->input('name');
-    //     );
-
-    //     Todo::table('todos')->where('id', $id)->update($data );
-    //     Session::flash('message', 'Data update successfully');
-
-    //     return redirect('/');
-    // }
+        $listItem = Todo::where('id', $id);
+        $listItem->update(['name' => $request->name ]);
+        
+        return redirect('/');
+    }
   
 }

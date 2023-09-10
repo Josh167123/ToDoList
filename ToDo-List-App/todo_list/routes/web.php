@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
 Route::get('/', [TodoController::class, 'index'] );
 
 Route::post('/saveItemRoute', [TodoController::class, 'saveItem'])->name('saveItem'); 
@@ -22,6 +26,6 @@ Route::post('/markCompleteRoute/{id}', [TodoController::class, 'markComplete'])-
 
 Route::delete('/deletedRoute/{id}', [TodoController::class, 'removeItem'])->name('removeItem');
 
-Route::get('/editRoute/{listItem}/edit', [TodoController::class, 'editItem'])->name('editItem');
+Route::post('/editRoute/{listItem}/edit', [TodoController::class, 'editItem'])->name('edit');
 
-Route::put('/editRoute/{listItem}/update', [TodoController::class, 'update'])->name('update');
+Route::put('/editRoute/{listItem}', [TodoController::class, 'update'])->name('update');

@@ -24,14 +24,28 @@
                     <tr class="tableRow"><td>Task: {{$listItem->name}}</td>
                     <div style="display: flex">
 
-                     
-                    <form method="post" action="{{route( 'markComplete', $listItem->id) }}" accept-charset="UTF-8">
+                    <form method="post" action="{{route( 'edit', $listItem->id) }}" accept-charset="UTF-8">
                         {{ csrf_field() }}
                         
-                        <td><button class="button combutton" type="submit">Completed</button></td>
+                        <td><button class="button editbutton" type="submit">Edit</button></td>
             
                      </form>
 
+                    
+                        @if( $listItem->completed == 0)
+                            <form method="post" action="{{route( 'markComplete', $listItem->id) }}" accept-charset="UTF-8">
+                        {{ csrf_field() }}
+                            <td><button class="button combutton" type="submit">Mark Completed</button></td>
+                            </form>
+                        
+                        @else 
+                            <form method="post" action="{{route( 'markComplete', $listItem->id) }}" accept-charset="UTF-8">
+                        {{ csrf_field() }}
+                            <td><button class="button combutton" type="submit">Mark Incomplete</button></td>
+                            </form>
+                        
+                            </form>
+                        @endif
                      <form method="post" action="{{route( 'removeItem', $listItem->id) }}" accept-charset="UTF-8">
                        {{ csrf_field() }}
                         {{ method_field('DELETE')}}
