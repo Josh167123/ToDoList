@@ -54,9 +54,7 @@ class TodoController extends Controller
 
     public function update(Request $request, $id){
         
-        Log::info("Im here");
-        Log::info($request);
-        Log::info($id);
+        
         $listItem = Todo::where('id', $id)->update(['name' => $request->task ]);
         
         return redirect('/');
