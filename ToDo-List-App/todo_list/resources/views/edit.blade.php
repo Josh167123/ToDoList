@@ -20,12 +20,12 @@
                 <h1>Edit Task</h1>
                     <tr>
 
-                    <input type="text" name="task" value="{{$listItem->name}}">       
+                           
                     
-                    <form method="post" action="{{route( 'update', $listItem->name) }}" accept-charset="UTF-8">
+                    <form method="post" action="{{route( 'update', $listItem->id) }}" accept-charset="UTF-8">
                         {{ csrf_field() }}
                         {{ method_field('PUT')}}
-
+                        <input type="text" name="task" value="{{$listItem->name}}">
                         <td><button class="button editbutton" type="submit">Save</button></td>
             
                      </form>

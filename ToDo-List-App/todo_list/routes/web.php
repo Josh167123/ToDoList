@@ -28,4 +28,4 @@ Route::delete('/deletedRoute/{id}', [TodoController::class, 'removeItem'])->name
 
 Route::post('/editRoute/{listItem}/edit', [TodoController::class, 'editItem'])->name('edit');
 
-Route::put('/editRoute/{listItem}', [TodoController::class, 'update'])->name('update');
+Route::put('/editRoute/{id}', [TodoController::class, 'update'])->name('update');

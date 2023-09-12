@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Todo;
 use Illuminate\Http\Request;
+use Log;
 
 class TodoController extends Controller
 {
     public function index() {
-
+        Log::info("Im here INDEX");
+        Log::info(Todo::all());
         return view('welcome', ['listItems' => Todo::all()]);
     }
 
@@ -51,9 +53,11 @@ class TodoController extends Controller
     }
 
     public function update(Request $request, $id){
-
-        $listItem = Todo::where('id', $id);
-        $listItem->update(['name' => $request->name ]);
+        
+        Log::info("Im here");
+        Log::info($request);
+        Log::info($id);
+        $listItem = Todo::where('id', $id)->update(['name' => $request->task ]);
         
         return redirect('/');
     }
